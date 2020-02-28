@@ -1,0 +1,183 @@
+$ease-out: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+// .kanban {
+  .kanban{
+    overflow:scroll;
+  }
+ul.drag-list,
+ul.drag-inner-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.drag-container {
+  margin: 20px auto;
+}
+
+.drag {
+  &__time {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    opacity: 0.8;
+    margin-bottom: 10px;
+  }
+  &__client {
+    padding: 10px 0 0;
+    margin-top: 10px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    font-size: 12px;
+    color: #3da9fc;
+  }
+}
+.drag-list {
+  display: flex;
+  align-items: flex-start;
+
+  @media (max-width: 690px) {
+    display: block;
+  }
+}
+
+.drag-column {
+  flex: 1;
+  margin: 0 5px;
+  position: relative;
+  border-radius: 5px;
+  min-width: 300px;
+  &:nth-of-type(1) .drag-column-header {
+    border-color: #3da9fc;
+  }
+  &:nth-of-type(2) .drag-column-header {
+    border-color: #58ef27;
+  }
+  &:nth-of-type(3) .drag-column-header {
+    border-color: #ffcc66;
+  }
+  &:nth-of-type(4) .drag-column-header {
+    border-color: #99ccff;
+  }
+  &:nth-of-type(5) .drag-column-header {
+    border-color: #ff8f92;
+  }
+  &:nth-of-type(6) .drag-column-header {
+    border-color: #ccc8f9;
+  }
+
+  @media (max-width: 690px) {
+    margin-bottom: 30px;
+  }
+
+  h2 {
+    font-size: 0.8rem;
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  &:last-of-type .drag-options{
+    display: none;
+  }
+}
+
+.drag-column-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 10px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+.drag-inner-list {
+  min-height: 100vh;
+  .is-moving {
+    background: rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0px 5px 5px 0px rgba(0, 0, 0, 0.15);
+    div {
+      transition: all 0.25s ease;
+      opacity: 0;
+    }
+  }
+}
+
+.drag-item {
+  padding: 12px 8px 10px;
+  background: white;
+  margin: 10px 0;
+
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  transition: $ease-out;
+  cursor: move;
+  &.is-moving {
+    // background:rgba(0,0,0,.4);
+    // div{
+    //   transition: all .25s ease;
+    //   opacity:0;
+    // }
+    opacity: 0.6;
+  }
+}
+
+.drag-header-more {
+  cursor: pointer;
+}
+
+.drag-options {
+  position: absolute;
+  top: 44px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  transform: translateX(100%);
+  opacity: 0;
+  transition: $ease-out;
+
+  &.active {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  &-label {
+    display: block;
+    margin: 0 0 5px 0;
+
+    input {
+      opacity: 0.6;
+    }
+
+    span {
+      display: inline-block;
+      font-size: 0.9rem;
+      font-weight: 400;
+      margin-left: 5px;
+    }
+  }
+}
+
+/* Dragula CSS  */
+
+.gu-hide {
+  display: none !important;
+}
+
+.gu-unselectable {
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+
+.gu-transit {
+  opacity: 0.2;
+}
+
+.gu-mirror {
+  position: fixed !important;
+  margin: 0 !important;
+  z-index: 9999 !important;
+  opacity: 0.8;
+  list-style-type: none;
+  background: white;
+  padding: 12px 8px 10px;
+}
+

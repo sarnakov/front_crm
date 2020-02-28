@@ -1,0 +1,43 @@
+.vs-sidebar-position-right{
+  max-width: 430px !important;
+  width: 430px !important;
+  .vx-row {
+    margin: 0 !important;
+  }
+  input {
+    height: auto;
+  }
+}
+
+
+.header-sidebar h4 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.header-sidebar h4 > button {
+  margin-left: 10px;
+}
+.footer-sidebar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.footer-sidebar > button {
+  border: 0px solid rgba(0, 0, 0, 0) !important;
+  border-left: 1px solid rgba(0, 0, 0, 0.07) !important;
+  border-radius: 0px !important;
+}
+.body-sidebar {
+  padding: 10px 40px 40px 40px;
+}
+.right-sidebar{
+  .vs-sidebar--background{
+    z-index: 52000;
+  }
+  .vs-sidebar-position-right {
+    z-index: 52000;
+  }
+}

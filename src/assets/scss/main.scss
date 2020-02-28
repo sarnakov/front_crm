@@ -1,0 +1,96 @@
+/*=========================================================================================
+  File Name: main.scss
+  Description: Main scss file. Imports other scss partials from 'vuexy' folder
+  ----------------------------------------------------------------------------------------
+  Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+  Author: Pixinvent
+  Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+@import "vuexy/variables";
+
+@import "vuexy/layout";
+@import "vuexy/typography";
+@import "vuexy/misc";
+@import "vuexy/extraComponents";
+@import "vuexy/themes";
+@import "vuexy/transitions";
+
+@import "vuexy/customClasses";
+
+// Vuesax fixes and enhancments
+@import "vuexy/fixesVuesax";
+
+// Tailwind Fixes
+@import "vuexy/tailwindFix";
+
+// rtl
+@import "vuexy/rtl";
+
+@import "components/kanban";
+@import "components/btn";
+@import "components/rightSidebar";
+
+
+.w-56	{
+  width: 14rem;
+}
+.accounting-providers-expand{
+  width: 100%;
+  display: flex!important;
+  flex-direction: column!important;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.agents-docstatus{
+  height: 8px;
+  width: 8px;
+  background: green;
+  margin: 0 auto;
+}
+.settings-users-list{
+  .vs-con-table .vs-con-tbody {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  .vs-table {
+    border-collapse: separate;
+    border-spacing: 0 10px;
+    padding: 0 1rem;
+
+    tr {
+      box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .05);
+
+      td {
+        padding: 20px;
+
+        &:first-child {
+          border-top-left-radius: .5rem;
+          border-bottom-left-radius: .5rem;
+        }
+
+        &:last-child {
+          border-top-right-radius: .5rem;
+          border-bottom-right-radius: .5rem;
+        }
+      }
+    }
+  }
+}
+.settings-other-list--mg{
+  margin: 0 -1.5rem;
+  width: calc(100% + 3rem)!important;
+}
+.videoAdvert-img{
+  height: 110px;
+}
+.popup-new-video{
+  .vs-popup{
+    width: 900px!important;
+
+  }
+  .ql-container{
+    min-height: 370px;
+  }
+}
